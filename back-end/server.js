@@ -99,6 +99,10 @@ app.use('/front-end', express.static(path.join("../", 'front-end')))
 
 app.use(bodyParser.json());
 
+app.get('/',(req,res)=>{
+res.redirect("/front-end");
+})
+
 // Define Aip
 app.post('/api/v1/get-suggested-price', (req, res) => {
   let product_Price = req.body.productPrice_INBTC;
